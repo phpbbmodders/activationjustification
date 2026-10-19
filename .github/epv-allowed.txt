@@ -1,0 +1,9 @@
+# EPV findings this extension keeps on purpose, checked by the epv job in
+# .github/workflows/tests.yml. One finding per line as EPV prints it, without
+# "on line N", with paths relative to the extension; give the reason above it.
+
+# Released migration: it only changes the type of the user_justification column,
+# which m1_initial_schema's revert_schema() drops when the extension's data is
+# deleted, so there is nothing for this migration to revert. Released migrations
+# must not be changed.
+Error: Migration file /migrations/m2_update_schema.php is missing the revert_schema() method.
